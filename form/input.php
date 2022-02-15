@@ -1,3 +1,12 @@
+<?php
+// スーパーグローバル変数 phpには9種類
+if (!empty($_POST)) {
+    echo '<pre>';
+    var_dump($_POST);
+    echo '</pre>';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -9,9 +18,13 @@
 </head>
 
 <body>
-    <form action="input.php" method="GET">
+    <form action="input.php" method="POST">
         氏名
         <input type="text" name="your_name">
+        <br>
+        <input type="checkbox" name="sports[]" value="野球">野球
+        <input type="checkbox" name="sports[]" value="サッカー">サッカー
+        <input type="checkbox" name="sports[]" value="バスケットボール">バスケットボール
 
         <input type="submit" value="送信">
     </form>
