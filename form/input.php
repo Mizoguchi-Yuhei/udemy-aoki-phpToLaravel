@@ -120,6 +120,15 @@ if (!empty($_POST['btn_submit'])) {
 
     <?php if ($pageFlag === 2) : ?>
         <?php if ($_POST['csrf'] === $_SESSION['csrfToken']) : ?>
+
+            <!-- DB接続 -->
+            <?php require '../mainte/insert.php';
+
+            insertContact($_POST);
+            ?>
+
+            <!-- DB保存 -->
+
             送信が完了しました。
 
             <?php unset($_SESSION['csrfToken']); ?>
@@ -199,11 +208,7 @@ if (!empty($_POST['btn_submit'])) {
 
                         <div class="form-group">
                             <label for="contact">お問い合わせ内容</label>
-                            <textarea class="form-control" id="contact" row="3" name="contact">
-      <?php if (!empty($_POST['contact'])) {
-            echo h($_POST['contact']);
-        } ?>
-      </textarea>
+                            <textarea class="form-control" id="contact" row="3" name="contact"><?php if (!empty($_POST['contact'])) { echo h($_POST['contact']);} ?></textarea>
                         </div>
 
                         <div class="form-check">

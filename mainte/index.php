@@ -28,4 +28,14 @@ var_dump($result2);
 echo '</pre>';
 
 
-// トランザクション まとまって処理
+// トランザクション まとまって処理 beginTransaction, commit, rollback
+$pdo->beginTransaction();
+
+try {
+    // SQL処理
+    $stmt = $pdo->prepare($sql);  // プリペアードステイトメント
+    $stmt->bindValue('id', 3, PDO::PARAM_INT);  // 紐付け
+    $stmt->execute();  // 実行
+} catch (PDOException $e) {
+    $pdo->rollBack();  // 更新のキャンセル
+}
