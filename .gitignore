@@ -2,3 +2,6 @@
 test.php
 .htaccess
 .htpasswd
+
+# DB
+db_connection.php
