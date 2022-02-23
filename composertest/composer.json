@@ -1,0 +1,17 @@
+{
+    "name": "mizoguchiyuutaira/composertest",
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mizoguchi-Yuhei",
+            "email": "mizo.cb.fl@gmail.com"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "^2.57"
+    }
+}

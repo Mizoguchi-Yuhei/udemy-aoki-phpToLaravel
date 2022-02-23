@@ -1,0 +1,13 @@
+<?php
+
+namespace Src\Controllers;
+
+use Src\Models\TestModel;
+
+class TestController
+{
+    public function run() {
+        $model = new TestModel;
+        echo $model->getHello();
+    }
+}
